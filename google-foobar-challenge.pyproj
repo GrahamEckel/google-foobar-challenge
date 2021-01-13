@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>google-foobar-challenge</Name>
     <RootNamespace>google-foobar-challenge</RootNamespace>
+    <InterpreterId>MSBuild|dev|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,9 +26,26 @@
     <Compile Include="minion-labor-shifts.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="prepare-the-bunnies-escape.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="power-hungry.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="the-grandest-staircase-of-them-all.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="dev\">
+      <Id>dev</Id>
+      <Version>2.7</Version>
+      <Description>dev (Python 2.7 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
